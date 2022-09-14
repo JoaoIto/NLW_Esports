@@ -2,7 +2,7 @@
 
 **Este projeto de uma rede social, guiada pela Rocktseat desenvolvido com Node.js, React, React Native. Bora codar** 🚀!
 
-[Figma](https://www.figma.com/community/file/1150897317533332617)
+## [Figma](https://www.figma.com/community/file/1150897317533332617)
 
 ---
 
