@@ -1,10 +1,13 @@
 # NLW Esports<img height="50" width="90" src="./assets/img/NLW_esports-logo.png">
 
 **Este projeto de uma rede social, guiada pela Rocktseat desenvolvido com Node.js, React, React Native. Bora codar** 🚀!
+<img src="./assets/img/Desktop.jpeg">
 
+--- 
 ## [Figma](https://www.figma.com/community/file/1150897317533332617)
 
 ---
+
 
 ## Diferença de Aplicação SPA, para uma página web:
 
