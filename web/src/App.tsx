@@ -1,7 +1,22 @@
+import { useEffect, useState } from "react";
+import { CreateAdBanner } from "./components/CreateAdBanner";
 import { GameBanner } from "./components/GameBanner";
 import "./styles/main.css";
-import { MagnifyingGlassPlus } from "phosphor-react";
+
 function App() {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+  fetch('http://localhost:3333/games')
+    .then(response => response.json())
+    .then(data => {
+      setGames(data);
+    })
+    .catch(error => {
+      console.error('ESTE É O ERRO: ' + error);
+    });
+}, []);
+
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
       <img src="/logo.svg" />
@@ -21,22 +36,7 @@ function App() {
         <GameBanner bannerUrl="/public/game5.png" title="Fortnite" addCount={4}/>
         <GameBanner bannerUrl="/public/game6.png" title="World Warwcraft" addCount={5}/>
       </div>
-      <div className="pt-1 bg-nlwGradientText mt-8 self-stretch rounded-lg overflow-hidden">
-        <div className="bg-[#2A2634] px-8 py-6 flex justify-between items-center">
-          <div>
-            <strong className="text-2x text-white font-black block">
-              Não achou duo pro camp?
-            </strong>
-            <span className="text-zinc-400">
-              Dá um SOS ae pra chamar ele pra call!
-            </span>
-          </div>
-          <button className="py-3 px-4 bg-violet-500 text-white rounded hover:bg-violet-700 flex items-center gap-3">
-            <MagnifyingGlassPlus size={24} />
-            Chamar SOS duo!
-          </button>
-        </div>
-      </div>
+      <CreateAdBanner/>
     </div>
   );
 }
